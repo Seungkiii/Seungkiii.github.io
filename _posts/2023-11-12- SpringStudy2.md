@@ -5,7 +5,8 @@ title: "2주차 스프링부트 스터디 미션"
 
 # ERD 생성 근거 및 JPA Entity 생성 관련 어노테이션
 
-![gdscERD.drawio](C:\Users\tmdrl\OneDrive\사진\카메라 앨범\gdscERD.drawio.png)
+![gdscERD.drawio](../images/2023-11-05-first/gdscERD.drawio.png)
+
 
 주제는 마켓컬리나 쿠팡과 같은 쇼핑몰 사이트 시스템으로 가정을 했다
 

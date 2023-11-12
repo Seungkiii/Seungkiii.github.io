@@ -362,10 +362,10 @@ JPA를 활용해서 DB를 관리하기 위해서는 어노테이션에 대해 �
 
 참조
 
-- https://dbjh.tistory.com/77
-- https://terianp.tistory.com/168
-- https://inpa.tistory.com/entry/DB-%F0%9F%93%9A-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8%EB%A7%81-1N-%EA%B4%80%EA%B3%84-%F0%9F%93%88-ERD-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8
-- https://velog.io/@yuseogi0218/JPA-Entity-Table-%EB%A7%8C%EB%93%A4%EA%B8%B0
+- <https://dbjh.tistory.com/77>
+- <https://terianp.tistory.com/168>
+- <https://inpa.tistory.com/entry/DB-%F0%9F%93%9A-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8%EB%A7%81-1N-%EA%B4%80%EA%B3%84-%F0%9F%93%88-ERD-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8>
+- <https://velog.io/@yuseogi0218/JPA-Entity-Table-%EB%A7%8C%EB%93%A4%EA%B8%B0>
 
  
 

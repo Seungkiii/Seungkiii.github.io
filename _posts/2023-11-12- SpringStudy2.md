@@ -1,16 +1,17 @@
 ---
 layout: single
 title: "2주차 스프링부트 스터디 미션"
+
 ---
 
 <br>
+
 # ERD 생성 근거 및 JPA Entity 생성 관련 어노테이션
 
 ![gdscERD.drawio](../images/2023-11-05-first/gdscERD.drawio.png)
 
 
 주제는 마켓컬리나 쿠팡과 같은 쇼핑몰 사이트 시스템으로 가정을 했다
-
 
 <br>
 <br>
@@ -183,9 +184,9 @@ JPA를 활용해서 DB를 관리하기 위해서는 어노테이션에 대해 �
 >@ToString
 >public class Member {
 >
->    @Id // PK에 해당하는 변수
->    private Long id;
->    private String name;
+>@Id // PK에 해당하는 변수
+>private Long id;
+>private String name;
 >```
 >
 >출처: https://terianp.tistory.com/168 [Terian의 IT 도전기:티스토리]
@@ -237,11 +238,11 @@ JPA를 활용해서 DB를 관리하기 위해서는 어노테이션에 대해 �
 >@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq")
 >public class Member {
 >
->    // SEQUENCE 를 사용하는 경우 SequenceGenerator 를 추가적으로 사용해서 시퀸스 제너레이터명과 시퀸스명을 지정 가능하다
->    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_generator")
->    private Long seqId;
->    
->    }
+>// SEQUENCE 를 사용하는 경우 SequenceGenerator 를 추가적으로 사용해서 시퀸스 제너레이터명과 시퀸스명을 지정 가능하다
+>@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_generator")
+>private Long seqId;
+>
+>}
 >```
 >
 >출처: https://terianp.tistory.com/168 [Terian의 IT 도전기:티스토리]
@@ -358,7 +359,207 @@ JPA를 활용해서 DB를 관리하기 위해서는 어노테이션에 대해 �
 <br>
 <br>
 
+### 실습 과제
 
+---
+
+이제 공부한것을 토대로 내 ERD 중에서 회원, 댓글, 게시판만 가지고 JPA를 통해 DB에 테이블을 만들 것이다. 솔직히 말하면 내 실력이 부족해서 다 만들기가 힘들다.
+
+
+
+먼저 application.yml
+
+> ```
+> spring:
+>     datasource:
+>         driver-class-name: com.mysql.cj.jdbc.Driver
+>         url: jdbc:mysql://localhost:3306/gdsc?serverTimezone=Asia/Seoul
+>         username: root
+>         password: 1234
+> 
+>     jpa:
+>         show-sql: true
+>         hibernate:
+>             ddl-auto: update
+> 
+>         properties:
+>             format_sql: true
+> ```
+
+<br>
+
+<br>
+
+회원 엔티티 == Member.java
+
+> ```java
+> package com.example.springbasic.testEntity;
+> 
+> import jakarta.persistence.*;
+> import java.util.List;
+> 
+> @Entity
+> @Table(name = "members")
+> public class Member {
+> 
+>     @Id
+>     @GeneratedValue(strategy = GenerationType.IDENTITY)
+>     @Column(name = "member_id")
+>     private Long memberId;
+> 
+>     @Column(name = "member_name", nullable = false, length = 255)
+>     private String memberName;
+> 
+>     @Column(name = "social_security_number", nullable = false, length = 14)
+>     private String socialSecurityNumber;
+> 
+>     @Column(name = "address", length = 500)
+>     private String address;
+> 
+>     @Column(name = "email", length = 255)
+>     private String email;
+> 
+>     @Column(name = "phone_number", length = 20)
+>     private String phoneNumber;
+> 
+>     @ManyToOne
+>     @JoinColumn(name = "member_id",insertable = false, updatable = false)
+>     private Member member;
+> 
+>     
+> }
+> ```
+
+<br>
+
+<br>
+
+게시판 엔티티 == Board.java
+
+> ```java
+> package com.example.springbasic.testEntity;
+> 
+> import jakarta.persistence.*;
+> import java.time.LocalDateTime;
+> 
+> @Entity
+> @Table(name = "boards")
+> public class Board {
+> 
+>     @Id
+>     @GeneratedValue(strategy = GenerationType.IDENTITY)
+>     private Long postNumber;
+> 
+>     @Column(name = "title", nullable = false, length = 255)
+>     private String title;
+> 
+>     @Column(name = "post_date", nullable = false)
+>     private LocalDateTime postDate;
+> 
+>     @Column(name = "update_date", nullable = false)
+>     private LocalDateTime updateDate;
+> 
+>     @Column(name = "views", nullable = false)
+>     private int views;
+> 
+>     @Column(name = "category", length = 50)
+>     private String category;
+> 
+>     @ManyToOne
+>     @JoinColumn(name = "member_id",insertable = false, updatable = false)//중복매핑 방지
+>     private Member member;
+> 
+>     @PrePersist
+>     protected void onCreate() {
+>         postDate = LocalDateTime.now();
+>     }
+> 
+>     @PreUpdate
+>     protected void onUpdate() {
+>         updateDate = LocalDateTime.now();
+>     }
+> 
+>    
+> }
+> ```
+
+<br>
+
+<br>
+
+
+
+댓글 엔티티 == Comment.java
+
+> ```java
+> package com.example.springbasic.testEntity;
+> 
+> import jakarta.persistence.*;
+> import java.time.LocalDateTime;
+> 
+> @Entity
+> @Table(name = "comments")
+> public class Comment {
+> 
+>     @Id
+>     @GeneratedValue(strategy = GenerationType.IDENTITY)
+>     private Long commentCode;
+> 
+>     @Column(name = "comment_content", nullable = false, columnDefinition = "TEXT")
+>     private String commentContent;
+> 
+>     @Column(name = "comment_time", nullable = false)
+>     private LocalDateTime commentTime;
+> 
+>     @Column(name = "comment_uppdate_time", nullable = false)
+>     private LocalDateTime commentUpdateTime;
+> 
+>     @ManyToOne
+>     @JoinColumn(name = "member_id",insertable = false, updatable = false)//중복매핑 방지
+>     private Member member;
+> 
+>     @PrePersist
+>     protected void onCreate() {
+>         commentTime = LocalDateTime.now();
+>     }
+> 
+>     @PreUpdate
+>     protected void onUpdate() {
+>         commentUpdateTime = LocalDateTime.now();
+>     }
+> 
+>     
+> }
+> ```
+
+<br>
+<br>
+
+파일구조
+
+![image-20231113011037315](../images/2023-11-12- SpringStudy2/image-20231113011037315.png)
+
+
+
+이제 메인에서 실행시키면 테이블이 만들어진다. 쿼리문을 쓰지 않고 만들어진다는 점이 많이 신기했다. 
+
+
+
+![image-20231113011304687](../images/2023-11-12- SpringStudy2/image-20231113011304687.png)
+
+![image-20231113011334546](../images/2023-11-12- SpringStudy2/image-20231113011334546.png)
+
+<br>
+<br>
+
+이번 과제는 정말 무엇부터 시작해야 할지 몰라서 더 힘들었던 것 같다. 그리고 엔티티 코드 만드는 것은 진짜 서칭해서 이것 저것 붙여보다가 겨우 돌아가는 것이다. 앞으로 더 빡세게 공부해야 한다는 일침을 준 과제였다.
+
+
+
+<br>
+<br>
+<br>
+<br>
 
 참조
 

@@ -95,7 +95,7 @@ public abstract class BaseTimeEntity {
 
 여기서 JPA Auditing은 Spring Data JPA에서 시간에 대해서 자동으로 값을 넣어주는 기능입니다. 도메인을 영속성 컨텍스트에 저장하거나 조회를 수행한 후에 update를 하는 경우 매번 시간 데이터를 입력하여 주어야 하는데, audit을 이용하면 자동으로 시간을 매핑하여 데이터베이스의 테이블에 넣어주게 됩니다.
 
-![SmartSelectImage_2023-11-26-17-11-02](C:\Users\tmdrl\OneDrive\사진\Screenshots\SmartSelectImage_2023-11-26-17-11-02.png)
+![SmartSelectImage_2023-11-26-17-11-02](../images/2023-11-26-SpringStudy4/SmartSelectImage_2023-11-26-17-11-02.png)
 
 출처: https://webcoding-start.tistory.com/53
 
@@ -181,7 +181,7 @@ public class BoardResponseDto {
 
 수정을 다 하고 포스트맨으로 데이터 입력 후 조회하면 아래 사진과 같이 나온다.
 
-![SmartSelectImage_2023-11-26-16-39-02](C:\Users\tmdrl\OneDrive\사진\Screenshots\SmartSelectImage_2023-11-26-16-39-02.png)
+![SmartSelectImage_2023-11-26-16-39-02](../images/2023-11-26-SpringStudy4/SmartSelectImage_2023-11-26-16-39-02.png)
 
 
 
@@ -200,7 +200,7 @@ public class BoardResponseDto {
 기존 코드를 보면 보드 엔티티에 isDeleted가 boolean 타입으로 초기에 false로 초기화 했었다. 그래서 delete 작업을 수행하면 true로 바뀌게 된다.  
 그래서 데이터 조회를 하면 isDeleted에 true로만 출력되고 제대로 sofr delete를 구현하지 못했다.
 
-![SmartSelectImage_2023-11-20-03-20-44](C:\Users\tmdrl\OneDrive\사진\Screenshots\SmartSelectImage_2023-11-20-03-20-44.png)
+![SmartSelectImage_2023-11-20-03-20-44](../images/2023-11-26-SpringStudy4/SmartSelectImage_2023-11-20-03-20-44.png)
 
 <br><br>
 
@@ -311,7 +311,7 @@ public class Board extends BaseTimeEntity{
 
 포스트맨에서 실행해서 확인해보겠다.  
 
-![SmartSelectImage_2023-11-26-16-40-15](C:\Users\tmdrl\OneDrive\사진\Screenshots\SmartSelectImage_2023-11-26-16-40-15.png)
+![SmartSelectImage_2023-11-26-16-40-15](../images/2023-11-26-SpringStudy4/SmartSelectImage_2023-11-26-16-40-15.png)
 
 <br>
 
@@ -319,9 +319,9 @@ public class Board extends BaseTimeEntity{
 
 <br>
 
-![SmartSelectImage_2023-11-26-16-41-02](C:\Users\tmdrl\OneDrive\사진\Screenshots\SmartSelectImage_2023-11-26-16-41-02.png)
+![SmartSelectImage_2023-11-26-16-41-02](../images/2023-11-26-SpringStudy4/SmartSelectImage_2023-11-26-16-41-02.png)
 
-![SmartSelectImage_2023-11-26-16-41-34](C:\Users\tmdrl\OneDrive\사진\Screenshots\SmartSelectImage_2023-11-26-16-41-34.png)
+![SmartSelectImage_2023-11-26-16-41-34](../images/2023-11-26-SpringStudy4/SmartSelectImage_2023-11-26-16-41-34.png)
 
 <br>
 
@@ -329,7 +329,7 @@ postNumber가 1인 데이터가 조회되지 않는다. 그럼 실제로 데이�
 
 <br>
 
-![Screenshot_2023-11-26-16-42-54](C:\Users\tmdrl\OneDrive\사진\Screenshots\Screenshot_2023-11-26-16-42-54.png)
+![Screenshot_2023-11-26-16-42-54](../images/2023-11-26-SpringStudy4/Screenshot_2023-11-26-16-42-54.png)
 
 <br>
 

@@ -429,11 +429,11 @@ public class CommentService {
 
 먼저 2개의 데이터를 생성해보자
 
-![SmartSelectImage_2023-12-04-03-13-03](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-13-03.png)
+![SmartSelectImage_2023-12-04-03-13-03](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-13-03.png)
 
 
 
-![SmartSelectImage_2023-12-04-03-13-31](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-13-31.png)
+![SmartSelectImage_2023-12-04-03-13-31](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-13-31.png)
 
 <br>
 
@@ -445,9 +445,9 @@ public class CommentService {
 
 <br>
 
-![SmartSelectImage_2023-12-04-03-14-00](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-14-00.png)
+![SmartSelectImage_2023-12-04-03-14-00](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-14-00.png)
 
-![SmartSelectImage_2023-12-04-03-14-24](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-14-24.png)
+![SmartSelectImage_2023-12-04-03-14-24](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-14-24.png)
 
 <br>
 
@@ -460,11 +460,11 @@ public class CommentService {
 
 **3. PUT**
 
-![SmartSelectImage_2023-12-04-03-15-15](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-15-15.png)
+![SmartSelectImage_2023-12-04-03-15-15](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-15-15.png)
 
 
 
-![SmartSelectImage_2023-12-04-03-15-42](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-15-42.png)
+![SmartSelectImage_2023-12-04-03-15-42](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-15-42.png)
 
 <br>
 
@@ -475,11 +475,11 @@ public class CommentService {
 
 **4. DELETE**
 
-![SmartSelectImage_2023-12-04-03-16-11](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-16-11.png)
+![SmartSelectImage_2023-12-04-03-16-11](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-16-11.png)
 
-![SmartSelectImage_2023-12-04-03-17-26](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-17-26.png)
+![SmartSelectImage_2023-12-04-03-17-26](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-17-26.png)
 
-![SmartSelectImage_2023-12-04-03-16-43](../images/2023-11-26-SpringStudy5/SmartSelectImage_2023-12-04-03-16-43.png)
+![SmartSelectImage_2023-12-04-03-16-43](../images/2023-12-03-SpringStudy5/SmartSelectImage_2023-12-04-03-16-43.png)
 
 
 
